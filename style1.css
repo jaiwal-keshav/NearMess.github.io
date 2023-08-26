@@ -1,0 +1,276 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+    /* 1rem = 10px */
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  .header {
+    padding: 0 0.8rem;
+    height: 7.5rem;
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: #f2f2ff;
+  }
+  
+  .header .logo {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+  
+  .navbar
+  {
+    position: absolute;
+    right: 10px;
+  }
+  
+  .navbar-list
+  {
+    display: flex;
+    align-content: end;
+  
+  }
+  
+  .navbar-list li{
+    margin-left: 12px;
+    margin-right: 12px;
+    list-style: none;
+    float: left;
+    width: auto;
+    text-align: center;
+    font-weight: 400;
+  }
+  
+   .transparent-window {
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+    right: 25rem;
+    bottom: 30rem;
+    width: 65%;
+    height: 65%;
+    background-color: rgb(255,255,255,90%); /*Change the last value (0.5) to adjust opacity */
+    pointer-events: none; /*Allows clicks to go through the transparent window  */ 
+   }  
+  
+  
+  
+  .navbar-link:link,
+  .navbar-link:visited {
+    display: inline-block;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    font-size: 1.8rem;
+    /* font-weight: 600;s */
+    color: #212529;
+    transition: all 0.3s;
+  }
+  
+  .navbar-link:hover,
+  .navbar-link:active {
+    color: #2A7353;
+  }
+  
+  .mobile-navbar-btn {
+    display: none;
+    background: transparent;
+    cursor: pointer;
+  }
+  
+  .mobile-nav-icon {
+    width: 4rem;
+    height: 4rem;
+    color: #212529;
+  }
+  
+  .mobile-nav-icon[name="close-outline"] {
+    display: none;
+  }
+  
+  /* ===========================================
+  Hero and Service Section Start
+  ======================================= */
+  .section-hero,
+  .section-services {
+    /* padding: 9.6rem 0; */
+    /* background-color: #a5d8ff; */
+    height: 60rem;
+    width: 100%;
+    display: flex;
+    background-image: linear-gradient(rgba(8, 6, 6, 0.3),rgba(8, 6, 6, 0.3)),url(./resources/images/img1.jpg);
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  
+  }
+  
+  .section-services {
+    background: #f3f0ff;
+  }
+  
+  .section-hero p,
+  .section-services p {
+    /* font-size: 3.2rem; */
+    font-size: 4.8rem;
+    font-weight: 800;
+  }
+  
+  #title_container
+  {
+    height: 26rem;
+    background-color: rgba(255,255,255,40%);
+    width: 55%;
+    text-align: center;
+    padding-top: 4rem;
+    border-radius: 8px;
+  }
+  
+  #title_container img
+  {
+    margin-top: 15px;
+    border-radius: 5rem;
+    background-color:black;
+    margin-top: 2rem;
+  }
+  
+  #hero_data_container_title
+  {
+    font-weight: 900;
+  }
+  
+  #hero_data_container_desc
+  {
+    font-size: 2rem;
+    color: black;
+    font-weight: 700;
+    padding-top: 0.5srem;
+  }
+  
+  
+  
+  
+  
+  /* ===========================================
+  Responsive Codes 
+  ======================================= */
+  
+  /* 980px  */
+  @media (max-width: 62em) {
+  
+    /* custom menu bar starts */
+     .menu1 {
+      display: inline-block;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+  
+    }
+  
+    header img{
+      height: 40px;
+      width: 70px;
+    }
+   
+    #nav_title
+    {
+      font-size: 26px!important;
+      
+    }
+    
+    .bar1, .bar2, .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+    
+    /* Rotate first bar */
+     .change .bar1 {
+      transform: translate(0, 11px) rotate(-45deg);
+    }
+     
+    /* Fade out the second bar */
+    .change .bar2 {opacity: 0;}
+    
+    /* Rotate last bar */
+     .change .bar3 {
+      transform: translate(0, -11px) rotate(45deg);
+    } 
+  
+  /* custom menu bar code ends */
+  
+    .header {
+      position: relative;
+      
+    }
+  
+    .navbar-link{
+      padding-bottom: 10px;
+      font-weight: 600;
+    }
+    .navbar {
+  
+      width: 100%;
+      height: 100vh;
+      background: #e7f5ff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+      /* to get the tranisition  */
+      transform: translateX(100%);
+      transition: all 0.5s linear;
+  
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      
+    }
+  
+    .navbar-list {
+      flex-direction: column;
+      align-items: center;
+      text-transform: uppercase;
+    }
+  
+    .active .navbar {
+      transform: translateX(0);
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  
+    .active .mobile-navbar-btn .mobile-nav-icon[name="close-outline"] {
+      display: inline-block;
+    }
+  
+    .active .mobile-navbar-btn .mobile-nav-icon[name="menu-outline"] {
+      display: none;
+    }
+  }
+  
+  /* Below 560px  */
+  @media (max-width: 35em) {
+    #title_container img{
+      width: 100%;
+    }
+  
+  }
